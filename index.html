@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🌱 کایزا - گره سبز جهانی</title>
+    <!-- فونت و استایل‌ها -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+    <!-- ==================== هدر ==================== -->
+    <header>
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="کایزا" height="50" />
+            <span class="logo-text">کایزا</span>
+        </div>
+        <nav>
+            <button id="connectBtn" class="btn btn-primary" onclick="connectWallet()">
+                🔗 اتصال متامسک
+            </button>
+        </nav>
+    </header>
+
+    <!-- ==================== صفحه اصلی (قبل از احراز) ==================== -->
+    <main id="mainPage">
+        <!-- بخش معرفی -->
+        <section class="hero">
+            <h1>🌱 از یک دانه تا یک درخت واقعی</h1>
+            <p>
+                با کایزا، هر دانه‌ای که می‌کارید، یک طوفان را مهار می‌کند.
+                هر اقدام سبز شما، ثوابی است برای زمین و کودکانی که به حمایت نیاز دارند.
+            </p>
+            <button class="btn btn-success" onclick="connectWallet()">
+                🚀 شروع کنید
+            </button>
+        </section>
+
+        <!-- بخش ویژگی‌ها -->
+        <section class="features">
+            <div class="feature-card">
+                <span class="icon">🌳</span>
+                <h3>بازی دانه تا درخت</h3>
+                <p>با آبیاری روزانه، گیاه خود را رشد دهید و توکن کسب کنید.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">❤️</span>
+                <h3>حمایت از خیریه</h3>
+                <p>کمک شما به محک و امام رضا (ع) به صورت شفاف روی بلاک‌چین ثبت می‌شود.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🤖</span>
+                <h3>دستیار هوشمند</h3>
+                <p>با کایزا مکالمه کنید، از گیاه خود عکس بگیرید و نکات کشاورزی بیاموزید.</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🛒</span>
+                <h3>بازارچه سبز</h3>
+                <p>محصولات دوستدار محیط زیست را با توکن کایزا مبادله کنید.</p>
+            </div>
+        </section>
+
+        <!-- بخش خیریه‌ها -->
+        <section class="charities">
+            <h2>🤝 خیریه‌های همکار</h2>
+            <div class="charity-row">
+                <div class="charity-card">
+                    <h3>مؤسسه محک</h3>
+                    <p>حمایت از کودکان مبتلا به سرطان</p>
+                    <a href="https://mahak-charity.org" target="_blank">وب‌سایت</a>
+                </div>
+                <div class="charity-card">
+                    <h3>امام رضا (ع)</h3>
+                    <p>حمایت از ایتام و نیازمندان</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== داشبورد (پس از احراز هویت) ==================== -->
+    <div id="dashboard" style="display: none;">
+        <!-- نوار بالای داشبورد -->
+        <div class="dashboard-header">
+            <div class="user-info">
+                <span id="userAddress">۰x۱۲۳۴...۵۶۷۸</span>
+                <span class="badge" id="greenScore">🏆 ۰</span>
+            </div>
+            <div class="wallet-info">
+                <span>💰 <span id="balance">۰</span> KAYZA</span>
+                <button class="btn btn-sm btn-outline" onclick="disconnectWallet()">خروج</button>
+            </div>
+        </div>
+
+        <!-- منوی داشبورد -->
+        <nav class="dashboard-nav">
+            <button class="nav-tab active" data-tab="garden">🌱 باغچه من</button>
+            <button class="nav-tab" data-tab="market">🛒 بازارچه</button>
+            <button class="nav-tab" data-tab="charity">❤️ خیریه</button>
+            <button class="nav-tab" data-tab="assistant">🤖 دستیار</button>
+            <button class="nav-tab" data-tab="history">📜 تاریخچه</button>
+        </nav>
+
+        <!-- ======== تب ۱: باغچه من (بازی دانه تا درخت) ======== -->
+        <section id="tab-garden" class="tab-content active">
+            <div class="garden-container">
+                <div class="plant-pot" id="plantPot">
+                    <!-- وضعیت گیاه با انیمیشن -->
+                    <img id="plantImage" src="assets/images/seed.png" alt="گیاه" />
+                    <div class="plant-status" id="plantStatus">🌰 دانه در خاک</div>
+                </div>
+                <div class="plant-actions">
+                    <button class="btn btn-success" onclick="waterPlant()">💧 آبیاری</button>
+                    <button class="btn btn-info" onclick="getPlantReport()">📊 گزارش رشد</button>
+                    <button class="btn btn-warning" onclick="plantTreeReal()">🌳 تبدیل به درخت واقعی</button>
+                </div>
+                <div class="plant-progress">
+                    <label>پیشرفت رشد:</label>
+                    <progress id="growthProgress" value="0" max="100"></progress>
+                    <span id="growthPercent">۰٪</span>
+                </div>
+                <div class="plant-tips" id="plantTips">
+                    💡 برای رشد بهتر، هر روز آبیاری کنید.
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== تب ۲: بازارچه سبز ======== -->
+        <section id="tab-market" class="tab-content">
+            <h2>🛒 بازارچه سبز</h2>
+            <div class="market-grid">
+                <div class="product-card">
+                    <h4>🚗 خودرو برقی</h4>
+                    <p>کاهش ۲ تن کربن در سال</p>
+                    <span class="price">۱۰۰ KAYZA</span>
+                    <button class="btn btn-primary" onclick="buyProduct('car')">خرید</button>
+                </div>
+                <div class="product-card">
+                    <h4>☀️ پنل خورشیدی</h4>
+                    <p>تأمین انرژی پاک</p>
+                    <span class="price">۵۰ KAYZA</span>
+                    <button class="btn btn-primary" onclick="buyProduct('solar')">خرید</button>
+                </div>
+                <div class="product-card">
+                    <h4>🚲 دوچرخه</h4>
+                    <p>حمل‌ونقل بدون آلایندگی</p>
+                    <span class="price">۱۰ KAYZA</span>
+                    <button class="btn btn-primary" onclick="buyProduct('bike')">خرید</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== تب ۳: خیریه ======== -->
+        <section id="tab-charity" class="tab-content">
+            <h2>❤️ کمک به خیریه</h2>
+            <div class="charity-donate">
+                <div class="charity-option">
+                    <h3>محک</h3>
+                    <p>حمایت از کودکان مبتلا به سرطان</p>
+                    <input type="number" id="donateMahak" placeholder="مبلغ به دلار" />
+                    <button class="btn btn-danger" onclick="donateToCharity('mahak')">کمک</button>
+                </div>
+                <div class="charity-option">
+                    <h3>امام رضا (ع)</h3>
+                    <p>حمایت از ایتام و نیازمندان</p>
+                    <input type="number" id="donateImam" placeholder="مبلغ به دلار" />
+                    <button class="btn btn-danger" onclick="donateToCharity('imamreza')">کمک</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== تب ۴: دستیار هوشمند ======== -->
+        <section id="tab-assistant" class="tab-content">
+            <h2>🤖 دستیار کایزا</h2>
+            <div class="chat-box">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="message bot">سلام! من کایزا هستم. چگونه می‌توانم به شما کمک کنم؟</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="chatInput" placeholder="پیام خود را بنویسید..." />
+                    <button class="btn btn-primary" onclick="sendMessage()">ارسال</button>
+                    <button class="btn btn-secondary" onclick="startVoice()">🎤 صدا</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== تب ۵: تاریخچه ======== -->
+        <section id="tab-history" class="tab-content">
+            <h2>📜 تاریخچه تراکنش‌ها</h2>
+            <div id="historyList">
+                <p class="empty-msg">هنوز تراکنشی ثبت نشده است.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== فوتر ==================== -->
+    <footer>
+        <p>🌍 کایزا - غیرمتمرکز، بین‌المللی، شفاف</p>
+        <p>
+            <a href="https://github.com/yourusername/kayza-node" target="_blank">مخزن GitHub</a>
+            |
+            <a href="https://t.me/KayzaCommunity" target="_blank">جامعه تلگرام</a>
+        </p>
+    </footer>
+
+    <!-- ==================== اسکریپت‌ها ==================== -->
+    <script src="assets/js/web3.min.js"></script>
+    <script src="assets/js/kayza-contract.js"></script>
+    <script src="assets/js/plant-game.js"></script>
+    <script src="assets/js/marketplace.js"></script>
+    <script src="assets/js/voice-assistant.js"></script>
+    <script src="assets/js/ui.js"></script>
+</body>
+</html>
