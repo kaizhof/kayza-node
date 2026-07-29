@@ -1,0 +1,698 @@
+/* ============================================
+   فونت و تنظیمات پایه
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2e7d32;
+    --primary-light: #4caf50;
+    --primary-dark: #1b5e20;
+    --secondary: #ff8f00;
+    --danger: #d32f2f;
+    --bg: #f1f8e9;
+    --card-bg: #ffffff;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --radius: 16px;
+    --transition: 0.3s ease;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--bg);
+    color: #1e2a1e;
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   هدر
+   ============================================ */
+header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+/* ============================================
+   دکمه‌ها
+   ============================================ */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: white;
+    color: var(--primary-dark);
+}
+.btn-primary:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+}
+
+.btn-success {
+    background: var(--primary-light);
+    color: white;
+}
+.btn-success:hover {
+    background: var(--primary-dark);
+    transform: scale(1.04);
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+}
+.btn-danger:hover {
+    background: #b71c1c;
+    transform: scale(1.04);
+}
+
+.btn-warning {
+    background: var(--secondary);
+    color: white;
+}
+.btn-warning:hover {
+    background: #e65100;
+    transform: scale(1.04);
+}
+
+.btn-info {
+    background: #0288d1;
+    color: white;
+}
+.btn-info:hover {
+    background: #01579b;
+    transform: scale(1.04);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+.btn-outline:hover {
+    background: white;
+    color: var(--primary-dark);
+}
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+.btn-secondary {
+    background: #6d8a6d;
+    color: white;
+}
+.btn-secondary:hover {
+    background: #4a6a4a;
+}
+
+/* ============================================
+   صفحه اصلی (قبل از احراز)
+   ============================================ */
+#mainPage {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-radius: var(--radius);
+    margin-bottom: 48px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 24px;
+    color: #2e3b2e;
+}
+
+/* ============================================
+   کارت‌های ویژگی‌ها
+   ============================================ */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 24px 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card .icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #4a5a4a;
+}
+
+/* ============================================
+   بخش خیریه‌ها (صفحه اصلی)
+   ============================================ */
+.charities {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    box-shadow: var(--shadow);
+}
+
+.charities h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--primary-dark);
+}
+
+.charity-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.charity-card {
+    background: #f5faf5;
+    padding: 20px 28px;
+    border-radius: var(--radius);
+    border-right: 6px solid var(--primary-light);
+    flex: 1 1 200px;
+}
+
+.charity-card h3 {
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+.charity-card a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+.charity-card a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   داشبورد (پس از احراز)
+   ============================================ */
+#dashboard {
+    flex: 1;
+    padding: 24px 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background: var(--card-bg);
+    padding: 16px 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 14px;
+    color: #2e3b2e;
+}
+
+.badge {
+    background: var(--secondary);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.wallet-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+/* ============================================
+   منوی داشبورد
+   ============================================ */
+.dashboard-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+    background: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.nav-tab {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 30px;
+    background: transparent;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    color: #4a5a4a;
+}
+
+.nav-tab:hover {
+    background: #e8f5e9;
+}
+
+.nav-tab.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* ============================================
+   تب‌ها (محتوای هر بخش)
+   ============================================ */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   تب باغچه (بازی دانه تا درخت)
+   ============================================ */
+.garden-container {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.plant-pot {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 20px;
+    background: radial-gradient(circle at 50% 80%, #8d6e63, #5d4037);
+    border-radius: 50% 50% 30% 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    position: relative;
+    box-shadow: inset 0 -20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.plant-pot img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.plant-status {
+    margin-top: 8px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.plant-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.plant-progress {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.plant-progress progress {
+    width: 60%;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #e0e0e0;
+}
+
+.plant-progress progress::-webkit-progress-value {
+    background: linear-gradient(90deg, var(--primary-light), var(--primary));
+}
+
+.plant-tips {
+    background: #e8f5e9;
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    color: #1e3a1e;
+    margin-top: 12px;
+}
+
+/* ============================================
+   تب بازارچه
+   ============================================ */
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.product-card {
+    background: var(--card-bg);
+    padding: 24px 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+.product-card h4 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.product-card .price {
+    display: block;
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin: 12px 0;
+}
+
+/* ============================================
+   تب خیریه
+   ============================================ */
+.charity-donate {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+
+.charity-option {
+    background: var(--card-bg);
+    padding: 28px 24px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    flex: 1 1 250px;
+    text-align: center;
+}
+
+.charity-option h3 {
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+}
+
+.charity-option input {
+    width: 80%;
+    padding: 10px 16px;
+    margin: 12px 0;
+    border: 2px solid #d0dcd0;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+}
+.charity-option input:focus {
+    border-color: var(--primary);
+}
+
+/* ============================================
+   تب دستیار هوشمند (چت‌بات)
+   ============================================ */
+.chat-box {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+.message.bot {
+    background: #e8f5e9;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.message.user {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-input {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    border-top: 1px solid #e0e8e0;
+    background: #f9fbf9;
+    flex-wrap: wrap;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px 16px;
+    border: 2px solid #d0dcd0;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    min-width: 120px;
+}
+.chat-input input:focus {
+    border-color: var(--primary);
+}
+
+/* ============================================
+   تب تاریخچه
+   ============================================ */
+#historyList {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    min-height: 200px;
+}
+
+.empty-msg {
+    text-align: center;
+    color: #7a8a7a;
+    padding: 40px 0;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #ecf3ec;
+    font-size: 14px;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item .type {
+    font-weight: 700;
+}
+.history-item .type.green {
+    color: var(--primary);
+}
+.history-item .type.donate {
+    color: var(--danger);
+}
+.history-item .type.buy {
+    color: var(--secondary);
+}
+
+/* ============================================
+   فوتر
+   ============================================ */
+footer {
+    background: var(--primary-dark);
+    color: #c8e6c9;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    font-size: 14px;
+}
+
+footer a {
+    color: #a5d6a7;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   واکنش‌گرایی (Responsive)
+   ============================================ */
+@media (max-width: 600px) {
+    header {
+        padding: 12px 16px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .dashboard-nav {
+        justify-content: center;
+    }
+
+    .nav-tab {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+
+    .plant-pot {
+        width: 160px;
+        height: 160px;
+    }
+
+    .plant-pot img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .chat-box {
+        height: 380px;
+    }
+
+    .charity-option input {
+        width: 100%;
+    }
+}
