@@ -1,0 +1,68 @@
+{
+    "project": {
+        "name": "کایزا",
+        "version": "1.0.0",
+        "description": "گره سبز جهانی برای احیای زمین"
+    },
+    "network": {
+        "name": "polygon",
+        "chainId": 137,
+        "rpcUrl": "https://polygon-rpc.com",
+        "explorer": "https://polygonscan.com"
+    },
+    "contracts": {
+        "kayzaToken": "0x...",
+        "plantTree": "0x...",
+        "charitySplitter": "0x..."
+    },
+    "charities": [
+        {
+            "id": "mahak",
+            "name": "موسسه خیریه محک",
+            "wallet": "0x...",
+            "share": 0.6,
+            "description": "حمایت از کودکان مبتلا به سرطان",
+            "website": "https://mahak-charity.org"
+        },
+        {
+            "id": "imamreza",
+            "name": "موسسه خیریه امام رضا (ع)",
+            "wallet": "0x...",
+            "share": 0.4,
+            "description": "حمایت از ایتام و نیازمندان"
+        }
+    ],
+    "greenMarket": {
+        "products": {
+            "car": {
+                "name": "خودرو برقی",
+                "price": 100,
+                "co2Reduction": "2 تن کربن در سال",
+                "emoji": "🚗"
+            },
+            "solar": {
+                "name": "پنل خورشیدی",
+                "price": 50,
+                "co2Reduction": "تأمین انرژی پاک",
+                "emoji": "☀️"
+            },
+            "bike": {
+                "name": "دوچرخه",
+                "price": 10,
+                "co2Reduction": "حمل‌ونقل بدون آلایندگی",
+                "emoji": "🚲"
+            }
+        }
+    },
+    "game": {
+        "treeCost": 1,
+        "rewardRate": 10,
+        "waterIncrement": "5-13",
+        "maxGrowthDays": 7
+    },
+    "assistant": {
+        "chatCost": 1,
+        "language": "fa",
+        "voiceEnabled": true
+    }
+}
